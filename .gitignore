@@ -1,0 +1,25 @@
+# OpenBao data and secrets
+data/
+logs/
+secrets/
+
+# Certbot directories
+certbot/
+
+# Test CA files
+test-ca/
+
+# Environment variables
+.env
+.envrc
+
+# Backups
+*.backup.*
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# CLauge
+.claude/

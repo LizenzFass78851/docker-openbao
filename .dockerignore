@@ -1,0 +1,9 @@
+data/
+logs/
+secrets/
+.git/
+.gitignore
+README.md
+.claude/
+.env
+*.backup.*
