@@ -23,7 +23,7 @@ This Docker setup provides a production-ready OpenBao instance with persistent d
 
 2. **Start OpenBao**:
    ```bash
-   docker-compose up -d
+   docker compose up -d
    ```
 
 3. **Initialize OpenBao** (first time only):
@@ -405,23 +405,23 @@ docker exec -it openbao bao status
 
 **Note**: If you see an error like "http: server gave HTTP response to HTTPS client", the container needs to be rebuilt:
 ```bash
-docker-compose down
-docker-compose up -d --build
+docker compose down
+docker compose up -d --build
 ```
 
 ### View logs
 ```bash
-docker-compose logs -f openbao
+docker compose logs -f openbao
 ```
 
 ### Stop OpenBao
 ```bash
-docker-compose down
+docker compose down
 ```
 
 ### Restart OpenBao
 ```bash
-docker-compose restart
+docker compose restart
 ```
 
 ### List issued certificates
@@ -503,7 +503,7 @@ If you lose access to the auto-unseal key:
 
    # Test restore (on a test instance)
    cp secrets/unseal.key.backup.YYYYMMDD secrets/unseal.key
-   docker-compose restart
+   docker compose restart
    docker exec openbao bao status
    ```
 
@@ -576,7 +576,7 @@ You should see URLs like `http://localhost:8200/v1/pki/acme/new-account` (with `
 
 3. **Check OpenBao logs**:
    ```bash
-   docker-compose logs openbao
+   docker compose logs openbao
    ```
 
 4. **Verify the key is readable inside the container**:
@@ -610,7 +610,7 @@ If you have an existing OpenBao instance with Shamir unsealing:
 
 4. **Restart and unseal manually one last time**:
    ```bash
-   docker-compose restart
+   docker compose restart
    docker exec -it openbao bao operator unseal
    # Enter your Shamir keys 3 times
    ```
@@ -622,7 +622,7 @@ If you have an existing OpenBao instance with Shamir unsealing:
 
 6. **Restart to test auto-unseal**:
    ```bash
-   docker-compose restart
+   docker compose restart
    docker exec openbao bao status
    ```
 
