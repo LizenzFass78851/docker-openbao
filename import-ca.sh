@@ -114,7 +114,7 @@ fi
 # Import the CA certificate and key
 echo -e "${YELLOW}Importing CA certificate and private key...${NC}"
 
-IMPORT_RESULT=$(bao_exec write -format=json pki/issuers/import/bundle pem_bundle=- <<< "$PEM_BUNDLE")
+IMPORT_RESULT=$(bao_exec write -format=json pki/issuers/import/bundle pem_bundle="$PEM_BUNDLE")
 
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}✓ CA certificate and key imported successfully${NC}"
